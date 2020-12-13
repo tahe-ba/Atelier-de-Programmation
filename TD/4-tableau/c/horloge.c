@@ -45,5 +45,5 @@ printf("\n%02d:%02d:%02d", h, m, s);
 sleep(1);
 system("clear");
 }
-//getchar();
+getchar();
 }
