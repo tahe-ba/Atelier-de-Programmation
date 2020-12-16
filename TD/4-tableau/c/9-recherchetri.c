@@ -59,6 +59,7 @@ do{
     i++;
     }
 }while((f!=i)&&(i<=n)) ;
+
 if (f!=i){
     printf("l'entier %d n'est pas present dans le tableau\n",r);
 }

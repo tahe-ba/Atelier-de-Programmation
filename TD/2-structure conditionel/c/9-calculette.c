@@ -1,13 +1,13 @@
 #include <stdio.h>
-void main()
-{
-  float a, b, res;
+void main(){
+  float a,b,res;
   char op;
   res = 0;
   printf("a=");
   scanf("%f", &a);
 
   printf("operateur:");
+  fflush(stdin);
   scanf(" %c", &op);
 
   printf("b=");

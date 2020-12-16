@@ -10,14 +10,13 @@ int i,n,max,min;
   } while (!(n >= 1));
 
 // array input
+  for (i = 1; i <=n; i++) {
+      printf("element[%d]:", i);
+      scanf("%d", & t[i]);
+  }
+
 for (i = 1; i <=n; i++) {
-    printf("element[%d]:", i);
-    scanf("%d", & t[i]);
-}
-max=1;  
-min=1;
-for (i = 1; i <=n; i++) {
-    if ((t[i])>(t[max])){
+    if ((t[i])>(t[1])){
         max=i;
     } else {
         min=i;

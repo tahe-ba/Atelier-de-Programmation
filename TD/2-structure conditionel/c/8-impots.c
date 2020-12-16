@@ -1,6 +1,5 @@
 //???
 #include<stdio.h>
-
 void main() {
   float rimp, rpart;
   int nbpart;
