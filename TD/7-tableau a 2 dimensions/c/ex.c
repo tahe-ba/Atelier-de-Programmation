@@ -4,11 +4,11 @@ void main(){
     do{
         printf("x=");
         scanf("%d",&x);
-    }while ((x<0)||(x>9999));
+    }while ((x<0)||(x>99));
     do{
         printf("y=");
         scanf("%d",&y);
-    }while ((y<0)||(y>9999));
+    }while ((y<0)||(y>99));
    while (t <= y){
     t =t* 10;
     printf("%d\n",t);
