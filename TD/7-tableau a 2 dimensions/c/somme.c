@@ -53,5 +53,5 @@ void main(){
     input(&c);
     remplir(t,l,c);
     afficher(t,l,c);
-    printf("somme des éléments : %d\n", somme(t,l,c));
+printf("somme des éléments : %d\n", somme(t,l,c));
 }
