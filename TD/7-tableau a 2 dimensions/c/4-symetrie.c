@@ -56,8 +56,8 @@ void main (){
     remplir(t,n);
     afficher(t,n);
 if (isSYM(t,n)==1) {
-    printf("vrai\n");
+    printf("la matrice est symetrique\n");
 }else if (isSYM(t,n)==0){
-    printf("faux\n");
+    printf("la matrice n'est pas symetrique\n");
 }
 }
