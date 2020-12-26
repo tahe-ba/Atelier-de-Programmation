@@ -13,21 +13,21 @@ void main() {
             scanf("%d", & t[i][j]);
         }
     }
-
-   for (i=0;i<n;i++){
-    printf(">>>>>>>>");
-    }
-    printf("\n");
-    for(i=0;i<n;i++){
-        for(j=0;j<n;j++){
-            printf("%d\t",t[i][j]);
-        }
-        printf("\n");
-    }
-    for (i=0;i<n;i++){
-    printf(">>>>>>>>");
-    }
-    printf("\n");
+     //affichage tableau
+      for (i=0;i<n;i++){
+      printf(">>>>>>>>");
+      }
+      printf("\n");
+      for(i=0;i<n;i++){
+         for(j=0;j<n;j++){
+               printf("%d\t",t[i][j]);
+         }
+         printf("\n");
+      }
+      for (i=0;i<n;i++){
+      printf(">>>>>>>>");
+      }
+      printf("\n");
 
     som_mag = 0;
     for (i = 0; i < n; i++)
