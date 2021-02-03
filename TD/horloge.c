@@ -5,19 +5,19 @@
 int main(){
 
 int h, m, s;
-printf("Setting up the time\n");
+printf("Time reset\n");
 do {
-printf("hours :");
+printf("Hours :");
 scanf("%d", &h);
 }while ((h > 12)||(h<0));
 
 do {
-printf("minutes :");
+printf("Minutes :");
 scanf("%d", &m);
 }while ((m > 60)||(m<0));
 
 do {
-printf("seconds :");
+printf("Seconds :");
 scanf("%d", &s);
 }while ((s > 60)||(s<0));
 
