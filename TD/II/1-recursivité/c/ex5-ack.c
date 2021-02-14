@@ -1,10 +1,19 @@
-int ack(int a, int b) {
+#include <stdio.h>
+ int ack(int m, int n) {
 
-  if (a == 0)
-      return b + 1;
+  if (m == 0)
+      return n + 1;
   else
       if (n == 0)
-          return ack (a - 1, 1);
+          return ack (m - 1, 1);
       else
-          return ack (a - 1, ack (a, b - 1));
+          return ack (m - 1, ack (m, n - 1));
+}
+void main (){
+    int x,y;
+    printf("x=");
+    scanf("%d",&x);
+    printf("y=");
+    scanf("%d",&y);
+    printf("le ackerman de %d et %d et %d\n",x,y,ack(x,y));
 }
