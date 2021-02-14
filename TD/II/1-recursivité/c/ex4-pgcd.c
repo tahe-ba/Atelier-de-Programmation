@@ -1,11 +1,11 @@
 #include  <stdio.h>
 
-int pgcd(int nbr1, int nbr2)
+int pgcd(int a, int b)
 {
-    if (nbr2 != 0)
-       return pgcd(nbr2, nbr1%nbr2);
+    if (b != 0)
+       return pgcd(b, a%b);
     else 
-       return nbr1;
+       return a;
 }
 
 
