@@ -17,7 +17,7 @@ void hanoi(char dep, char dest, char temp, int n)
 void main()
 {
 	int n;
-    printf("nombre de disque: ");
+    printf("Dans ce jeux il y a 3 tours qu'on va appeler a b c\nnombre de disque: ");
     scanf("%d",&n);
 	hanoi('a','c','b',n);
 }
