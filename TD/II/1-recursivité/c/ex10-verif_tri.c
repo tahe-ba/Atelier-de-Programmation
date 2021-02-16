@@ -1,15 +1,11 @@
 #include <stdio.h>
-int verif_tri(int t[],int n)
-{
-  if(n==0)
-       return 1;
-  else
-  {
-     if(t[n]>t[n-1])
-       return verif_tri(t,n-1);
-     else
-       return 0;
-  }
+
+int verif_tri(int t[], int n) {
+    if (n == 1 || n == 0)
+        return 1;
+    if (t[n - 1] < t[n - 2])
+        return 0;
+    return verif_tri(t, n - 1);
 }
 
 void input(int * n) {
@@ -42,7 +38,8 @@ void main() {
     input( & n);
     remplir(t, n);
     afficher(t, n);
-    if (verif_tri(t,n-1))
+    if (verif_tri(t, n))
         printf("tableau trié\n");
     else
-        printf("tableau non trié\n"); }
+        printf("tableau non trié\n");
+}
