@@ -1,0 +1,71 @@
+La fonction qui permet d'écrire dans un fichier binaire
+
+fwrite(adresse de la variable qui l'information à écrire, taille (en octet), nombre d'element, FILE *f)
+
+personne p;
+FILE *f;
+
+scanf("%s",p.nom);
+scanf("%s",p.prenom);
+scanf("%d",&p.age);
+
+f=fopen("pers.dat","wb");
+fwrite(&p,sizeof(personne),1,f);
+fclose(f);
+
+Pour lire à partir d'un fichier binaire
+
+fread(adresse de la variable qui va contenir l'information, taille en octet, nombre d'element', FILE * f)
+
+personne art;
+FILE * f;
+
+f=fopen("pers.dat","rb")
+fread(&art,sizeof(personne),1,f);
+printf("Le nom est : %s\n",art.nom);
+printf("Le prenom est ; %s\n",art.prenom)
+printf("l age est : %d\n",art.age);
+fclose(f);
+
+
+personne T[10];
+// remplir le tableau
+for(i=0;i<=9;i++)
+{
+    scanf("%s",T[i].nom);
+    scanf("%s",T[i].prenom);
+    scanf("%d",&T[i].age);
+}
+f=fopen("donnees.dat","wb");
+// ecrire le tableau dans le fichier d'un seul coup'
+fwrite(T,sizeof(personne),10,f);
+fclose(f);
+
+//lecture 10 element d'un seul coup
+f=fopen("donnees.dat","rb");
+// lire le tableau dans le fichier d'un seul coup'
+fread(T,sizeof(personne),10,f);
+fclose(f);
+
+
+int x;
+//lecture element par élément
+f=fopen("donnees.dat","rb");
+fread(&x,sizeof(personne),1,f);
+while(!feof(f))
+{
+    printf("%d\t",x);
+    fread(&x,sizeof(personne),1,f);
+}
+fclose(f);
+
+int x,i;
+//lecture element par élément
+f=fopen("donnees.dat","rb");
+for(i=0;i<=9;i++)
+{fread(&T[i],sizeof(personne),1,f);}
+fclose(f);
+
+
+
+
