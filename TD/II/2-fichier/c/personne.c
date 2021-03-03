@@ -20,20 +20,22 @@ void remplir_bin_n(FILE *fi,int n) {
                 printf("\tPrenom: ");
                 while ((getchar()) != '\n');
                 scanf("%[^\n]", p.prenom);
-            fwrite(&p,3,sizeof(pers),fi);
+            fwrite(&p,1,sizeof(pers),fi);
         }
     fclose(fi);
 }
 
 void afficher_file_bin(FILE *f){
     pers pi;
-    fread(&pi,3,sizeof(pers),f);
-
+    int i=1;
+    fread(&pi,1,sizeof(pers),f);
     while(!feof(f)){
-        printf("l age est : %d\n",pi.age);
-        printf("Le nom est : %s\n",pi.nom);
-        printf("Le prenom est : %s\n",pi.prenom);
-        fread(&pi,3,sizeof(pers),f);
+        printf("Information du personne n° %d\n", i );
+        printf("\tL'age est : %d\n",pi.age);
+        printf("\tLe nom est : %s\n",pi.nom);
+        printf("\tLe prenom est : %s\n",pi.prenom);
+        fread(&pi,1,sizeof(pers),f);
+        i++;
     }
     fclose(f);
 }
