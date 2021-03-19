@@ -30,8 +30,9 @@ void tri(char * inp) {
             if (e1 > e2) {
                 fseek(finp, (sizeof(int) * -2), SEEK_CUR);
                 fwrite( & e2, 1, sizeof(int), finp);
-                fwrite( & e1, 1, sizeof(int), finp);
+                fwrite( & e1, 1, sizeof(int), finp); 
                 p = 1;
+                fflush(finp);
             } else {
                 e1 = e2;
             }
