@@ -13,7 +13,7 @@ void text_binary(char * inp, char * out) {
 void binary_text(char * inp, char * out) {
     int tmp;
     FILE * finp = fopen(inp, "rb");
-    FILE * fout = fopen(out, "w");
+    FILE * fout = fopen(out, "w+");
     while (fread( & tmp, sizeof(int), 1, finp) == 1)
         fprintf(fout, "%d\n", tmp);
     fclose(finp);
