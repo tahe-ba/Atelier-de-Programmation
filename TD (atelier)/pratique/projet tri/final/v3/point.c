@@ -1,13 +1,20 @@
 #include <stdio.h>
-
 #include <stdlib.h>
-
-int cmpfunc(const void * a,
-    const void * b) {
-    return ( * (int * ) a - * (int * ) b);
+//function that sorts an array
+void bubble_sort(int list[]){
+  int c, d, t;
+  for (c = 0 ; c < 9; c++) { 
+    for (d = 0 ; d < 9 - c ; d++) { 
+      if (list[d] > list[d+1]) { 
+        t         = list[d];
+        list[d]   = list[d+1];
+        list[d+1] = t;
+      }
+    }
+  }
 }
 
-void extract(FILE * finp, int t[10], int * pp) {
+void extract(FILE * finp, int t[10], int * pp) { 
     int i, x = 0, j;
     int temp;
     finp = fopen("input.txt", "r");
@@ -18,21 +25,22 @@ void extract(FILE * finp, int t[10], int * pp) {
         for (i = 0; i < 10; i++) {
             fscanf(finp, "%d", & t[i]);
         }
-        qsort(t, 10, sizeof(int), cmpfunc);
+        bubble_sort(t);
         x++;
     } while ((!feof(finp)) && x > 10);
     fclose(finp);
     * pp += 10;
 }
+//write to text from array
 void tab_text(int t[10], char * out) {
     int i;
-    FILE * fout = fopen(out, "a+");
+    FILE * fout = fopen(out, "w+");
     for (i = 0; i < 10; i++) {
         fprintf(fout, "%d\n", t[i]);
     }
     fclose(fout);
 }
-
+//return line nuber
 int line_number(char * p) {
     FILE * f;
     int tmp, i = 0;
@@ -43,7 +51,7 @@ int line_number(char * p) {
     return i;
 
 }
-
+//tri
 void tri_tab_fiche(int t[10], FILE * fo) {
     FILE * fi = fopen("output.txt", "r");
     int i = 0, num, j, k;
@@ -55,7 +63,7 @@ void tri_tab_fiche(int t[10], FILE * fo) {
         i++;
     }
     fclose(fi);
-    fo = fopen("output.txt", "wr+");
+    fo = fopen("output.txt", "w+");
     rewind(fo);
     int m, n;
     i = 0;
@@ -97,8 +105,8 @@ void main() {
     FILE * in , * out;
     extract( in , tab, & pos);
     tab_text(tab, "output.txt");
-    do {
+    while (pos < line_number("input.txt")||(pos<10)){
         extract( in , tab, & pos);
         tri_tab_fiche(tab, out);
-    } while (pos < line_number("input.txt"));
+    }
 }
