@@ -79,6 +79,7 @@ void afficher_pile_it(pile pi){
         while(p1!=NULL){
             printf("%d\t",p1->valeur);
             p1=p1->suivant;
+        }
     }
 }
 
@@ -120,10 +121,10 @@ pile vider_it2 (pile pi){
 pile vider_rec(pile pi){
     elementpile *elt;
     if (est_vide(pi)){
-        return (creation())
+        return (creation());
     }else {
-        elt=p;
+        elt=pi;
         free(elt);
-        return(vider_rec(p->suivant));
+        return(vider_rec(pi->suivant));
     }
 }
